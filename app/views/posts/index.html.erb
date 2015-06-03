@@ -17,6 +17,7 @@
 					  <h3><%= post.title %></h3>
 
 					  <li><%= auto_link(post.url) %></li>
+					  <li><%= post.user.username %></li>
 					  <li><%= post.get_upvotes.size %> points</li>
 					  <li class="bold"><%= post.user.username %></li>
 					  <li class="date"><%= time_ago_in_words(post.created_at) %> ago</li>
