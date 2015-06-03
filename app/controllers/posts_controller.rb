@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, only: [:create, :upvote]
+	before_action :authenticate_user!, only: [:create, :upvote, :downvote]
 	def index
 		@posts = Post.all
 	end
@@ -24,6 +24,18 @@ class PostsController < ApplicationController
 		if @post.save
 			@post.upvote_by current_user
 			flash[:success] = "Upvoted"
+		else
+			flash[:error] = "Please Sign In"
+		end
+		redirect_to :back
+	end
+
+	def downvote
+		@post = Post.find(params[:id])
+
+		if @post.save
+			@post.downvote_by current_user
+			flash[:success] = "Downvoted"
 		else
 			flash[:error] = "Please Sign In"
 		end
