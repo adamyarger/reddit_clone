@@ -4,11 +4,21 @@
   <title>RedditClone</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'> -->
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<%= yield %>
+	<%= render 'layouts/header' %>
+	<div class="container">
+		<% flash.each do |message_type, message| %>
+			<div id="flash" class="flash-<%= message_type %>"><%= message %></div>
+		<% end %>
 
+		<%= yield %>
+	</div>
+	
 </body>
 </html>

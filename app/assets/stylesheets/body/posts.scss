@@ -1,0 +1,70 @@
+button{
+	@include button;
+
+}
+
+.type-system-geometric{
+  border-bottom: solid 1px $border-bottom;
+}
+
+.bigbox{
+	@include outer-container;
+  margin-bottom: 150px;
+}
+
+.box{
+	@include span-columns(12);
+
+  .up-down {
+    float: left;
+    font-size: 20px;
+    margin-left: 25px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+    float: left;
+    padding-top: 0.3em;
+    @include span-columns(12);
+    border-bottom: 2px solid $background;
+    background: #fff;
+
+    
+    li {
+      line-height: 1.5em;
+      padding-right: 1em;
+      display: inline;
+      text-align: left;
+      color: $gray-light;
+      }
+
+    .bold{
+          font-weight: 600;
+        }
+  }
+
+  .post-box {
+    margin: 0 0 15px 70px;
+  }
+}
+
+.type-system-geometric{
+	p.date {
+    color: $gray-light;
+    font-size: 0.9em;
+    margin-bottom: 0.3em;
+  }
+
+}
+
+.form-box{
+  input{
+    margin-bottom: 10px;
+  }
+}
+
+
+
+  
+

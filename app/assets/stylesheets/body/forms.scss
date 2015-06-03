@@ -1,0 +1,46 @@
+.form-bigbox{
+	@include outer-container;
+  margin-bottom: 150px;
+}
+
+.form-box{
+	@include span-columns(8);
+	@include shift(2);
+
+	input{
+		width: 100%;
+	  padding: 7px;
+	  font-size: 1em;
+	  border: 1px solid #dddddd;
+	}
+
+	input:focus{
+		border-color: $green;
+	}
+
+	textarea{
+		width: 100%;
+	  padding: 7px;
+	  font-size: 1em;
+	  border: 1px solid #dddddd;
+	}
+
+	textarea:focus{
+		border-color: $green;
+	}
+
+	.actions{
+		input{
+			padding: 10px;
+		  color: #fff;
+		  background-color: $green;
+		  border: none;
+		  margin-top: 18px;
+		  cursor: pointer;
+		}
+
+		input:hover{
+			background: shade($green, 20%)
+		}
+	}
+}
