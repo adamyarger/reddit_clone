@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, only: [:create]
+	before_action :authenticate_user!, only: [:create, :upvote]
 	def index
 		@posts = Post.all
 	end
@@ -16,6 +16,18 @@ class PostsController < ApplicationController
 
 	def new
 		@post = Post.new
+	end
+
+	def upvote
+		@post = Post.find(params[:id])
+
+		if @post.save
+			@post.upvote_by current_user
+			flash[:success] = "Upvoted"
+		else
+			flash[:error] = "Please Sign In"
+		end
+		redirect_to :back
 	end
 
 	private 
